@@ -21,16 +21,48 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-
+                    <div class="col-2 mb-4">
+                        <a href="{{route('admin.category.create')}}" class="btn btn-block btn-success">Добавить</a>
+                    </div>
                 </div>
                 <!-- /.row -->
+                <div class="content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body table-responsive p-0">
 
+                                    <table class="table table-hover text-nowrap">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>User</th>
+                                        </tr>
+
+                                        </thead>
+                                        <tbody>
+                                        @foreach($categories as $categorie)
+                                            <tr>
+                                                <td>{{$categorie->id}}</td>
+                                                <td>{{$categorie->title}}</td>
+                                            </tr>
+                                        @endforeach
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                </div>
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->

@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers\Admin\Category;
 
-use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class CreateController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::all();
-        return view('admin.categories.index', compact('categories'));
+        return view('admin.categories.create');
     }
-
 }
