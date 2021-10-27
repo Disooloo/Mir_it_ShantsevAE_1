@@ -23,7 +23,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/', 'IndexController')->name('admin.category.index');
         Route::get('/create', 'CreateController')->name('admin.category.create');
         Route::post('/', 'StoreController')->name('admin.category.store');
+        Route::get('/{detail}/', 'ShowController')->name('admin.category.show');
+        Route::get('{detail}/edit', 'EditController')->name('admin.category.edit');
+        Route::patch('{detail}', 'UpdateController')->name('admin.category.update');
     });
+    Route::group(['namespace' => 'Tag', 'prefix' => 'tag'], function () {
+        Route::get('/', 'IndexController')->name('admin.tag.index');
+        Route::get('/create', 'CreateController')->name('admin.tag.create');
+
+    });
+
 });
 
 Auth::routes();

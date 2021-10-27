@@ -30,6 +30,14 @@
                         </span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.tag.index') }}" class="nav-link">
+                        <i class="fas fa-tags pr-2"></i>
+                        <span>
+                            Теги
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
