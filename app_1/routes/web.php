@@ -18,14 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('main');
 
 
-Route::get('/login', function (){
+Route::get('/auth', function (){
     return view('auth.login');
-})->name('login');
+})->name('auth');
 
 
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
+Route::resource('/profiles', \App\Http\Controllers\ProfilesController::class);
 
 Route::middleware(['role:admin'])->prefix('administrator')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'], )->name('homeAdmin');

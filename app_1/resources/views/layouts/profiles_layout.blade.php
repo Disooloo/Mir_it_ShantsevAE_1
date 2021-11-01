@@ -17,7 +17,6 @@
 @include('components.navigation.header')
 
 <div class="main-wrapper">
-  @include('components.search.search')
     @yield('content')
 </div>
 @include('components.navigation.footer')

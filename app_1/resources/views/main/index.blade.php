@@ -49,7 +49,7 @@
                                 <h3 class="mini-title mobile-off">{{$el->title}}</h3>
                                 <div class="d-flex align-items-center flex-wrap mb8 ">
                                     <span class="mr16 paragraph">
-                                         {{$el->content}}
+                                        <?=strip_tags ($el->content)?>
                                         <a href="{{$el->link}}">Подробнее</a></span>
                                 </div>
                             </div>
