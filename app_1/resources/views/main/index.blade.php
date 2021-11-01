@@ -10,7 +10,8 @@
             <div class="row">
                 <div class="col-lg-9 desctop-992-pr-16">
                     <div class="d-flex align-items-center flex-wrap mb8">
-                        <span class="paragraph mr16">Найдено 2 человека</span>
+
+                        <span class="paragraph mr16">Найдено {{$post_count}} постов</span>
 
                         <div class="vakancy-page-header-dropdowns">
 
@@ -47,7 +48,9 @@
                                 <div class="mini-paragraph cadet-blue mobile-mb12">Обновлено {{$el->create_at}}</div>
                                 <h3 class="mini-title mobile-off">{{$el->title}}</h3>
                                 <div class="d-flex align-items-center flex-wrap mb8 ">
-                                    <span class="mr16 paragraph">{{$el->content}} <a href="{{$el->link}}">Подробнее</a></span>
+                                    <span class="mr16 paragraph">
+                                         {{$el->content}}
+                                        <a href="{{$el->link}}">Подробнее</a></span>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +71,7 @@
 {{--                        </li>--}}
 {{--                    </ul>--}}
                 </div>
-              @include('components.search.filter')
+{{--              @include('components.search.filter')--}}
             </div>
         </div>
     </div>

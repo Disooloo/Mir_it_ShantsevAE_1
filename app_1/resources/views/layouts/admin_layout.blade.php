@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{asset('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{asset('admin/plugins/daterangepicker/daterangepicker.css')}}">
+    <!-- Colorbox -->
+    <link rel="stylesheet" href="{{asset('admin/dist/css/colorbox.css')}}">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -44,13 +46,7 @@
 
     @yield('content')
 
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2021 <a href="#">Dissoloo</a>.</strong>
-        Admins panel
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.2.0
-        </div>
-    </footer>
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -73,6 +69,14 @@
 <script src="{{asset('admin/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <script src="{{asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{asset('admin/dist/js/adminlte.js')}}"></script>
+<!--tiny -->
+<script src="https://cdn.tiny.cloud/1/dq59ydeim3xsf8f1a6yjnihkt1mqkvriurxwdos691ykbxab/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<!-- admin_script-->
 <script src="{{asset('admin/admin.js')}}"></script>
+<!-- Colorbox -->
+<script src="{{asset('admin/dist/js/jquery.colorbox-min.js')}}"></script>
+<script type="text/javascript" src="{{asset('packages/barryvdh/elfinder/js/standalonepopup.js')}}"></script>
+
+
 </body>
 </html>

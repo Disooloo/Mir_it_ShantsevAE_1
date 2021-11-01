@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Не работали контроллеры, поэтому писал тут.
+Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('main');
 
-Route::get('/', function (){
-    return view('main.index', ['post' => \App\Models\Posts::all()]);
-})->name('home');
 
 Route::get('/login', function (){
     return view('auth.login');
@@ -32,5 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['role:admin'])->prefix('administrator')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'], )->name('homeAdmin');
     Route::resource('category', CategoryController::class);
+    Route::resource('post', PostController::class);
 });
 

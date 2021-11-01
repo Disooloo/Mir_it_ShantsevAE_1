@@ -21,6 +21,12 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
+            </div>
+         @endif
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -58,14 +64,15 @@
                                             </td>
 
                                             <td class="project-actions text-right">
-                                                <a class="btn btn-info btn-sm" href="">
+                                                <a class="btn btn-info btn-sm" href="{{route('category.edit', $category['id']) }}">
                                                     <i class="fas fa-pencil-alt">
                                                     </i>
                                                     Редактировать
                                                 </a>
-                                                <form action="" method="POST"
+                                                <form action="{{route('category.destroy', $category['id'])}}" method="POST"
                                                       style="display: inline-block">
                                                     @csrf
+                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                                         <i class="fas fa-trash">
                                                         </i>

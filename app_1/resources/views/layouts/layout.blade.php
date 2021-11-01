@@ -1,7 +1,6 @@
-@include('components.navigation.header')
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,8 +14,10 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
 </head>
 <body>
+@include('components.navigation.header')
+
 <div class="main-wrapper">
   @include('components.search.search')
     @yield('content')
 </div>
-@include('components.navigation.footer')
+{{--@include('components.navigation.footer')--}}
