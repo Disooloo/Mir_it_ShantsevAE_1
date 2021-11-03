@@ -1,12 +1,12 @@
 @extends('layouts.layout')
-
-
+@section('search')
+    @include('components.search.search')
+@endsection
 @section('content')
 
     <div class="content">
         <div class="container">
             <h1 class="main-title mt24 mb16">Люди изменившие IT</h1>
-            <button class="vacancy-filter-btn">Фильтр</button>
             <div class="row">
                 <div class="col-lg-9 desctop-992-pr-16">
                     <div class="d-flex align-items-center flex-wrap mb8">
@@ -22,19 +22,7 @@
                                     <a class="dropdown-item" href="#">За все время</a>
                                 </div>
                             </div>
-                            <div class="vakancy-page-wrap show">
-                                <a class="vakancy-page-btn vakancy-btn dropdown-toggle" href="#" role="button"
-                                   id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    По новизне
-                                    <i class="fas fa-angle-down arrowDown"></i>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">По новизне</a>
-                                    <a class="dropdown-item" href="#">По возрастанию зарплаты</a>
-                                    <a class="dropdown-item" href="#">По убыванию зарплаты</a>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     @foreach( $post as $el)

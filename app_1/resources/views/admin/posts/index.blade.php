@@ -1,5 +1,5 @@
 @extends('layouts.admin_layout')
-@section('title', 'Категории')
+@section('title', 'Посты')
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->

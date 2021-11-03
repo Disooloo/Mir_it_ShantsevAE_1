@@ -1,5 +1,5 @@
 @extends('layouts.admin_layout')
-@section('title', 'Добавление категории')
+@section('title', 'Добавление поста')
 
 
 @section('content')
@@ -52,6 +52,10 @@
                                             <option value="{{$category['id']}}">{{$category['title']}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Ссылка из источноков</label>
+                                        <input type="text" class="input-group" name="link">
                                     </div>
                                 </div>
                                 <div class="form-group">

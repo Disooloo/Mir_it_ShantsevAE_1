@@ -50,6 +50,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->cat_id = $request->cat_id;
         $post->create_at = '2020-10-01';
+        $post->link = $request->link;
         $post->save();
 
         return redirect()->back()->withSuccess('Статья успешно добавлена!');
@@ -96,6 +97,7 @@ class PostController extends Controller
         $post->img = '/'.$request->img;
         $post->content = $request->content;
         $post->cat_id = $request->cat_id;
+        $post->link = $request->link;
         $post->create_at = '2020-10-01';
         $post->save();
 

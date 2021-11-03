@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Profiles;
+use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 
-class ProfilesController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        $role = Role::all();
-
-        return view('main.profiles.index',[
-            'role' => $role
+        $blog_count = Blog::all()->count();
+        return view('main.blog.index',[
+            'post' => Blog::all(),
+            'blog_count' => $blog_count,
         ]);
     }
 
@@ -29,7 +29,7 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        return view('main.profiles.create');
+        //
     }
 
     /**
@@ -46,21 +46,24 @@ class ProfilesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Profiles  $profiles
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Profiles $profiles)
+    public function show(Blog $blog)
     {
-        //
+        event('postHasViewed', $blog);
+        return view('main.blog.show',[
+            'blog' => $blog,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Profiles  $profiles
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profiles $profiles)
+    public function edit(Blog $blog)
     {
         //
     }
@@ -69,10 +72,10 @@ class ProfilesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Profiles  $profiles
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profiles $profiles)
+    public function update(Request $request, Blog $blog)
     {
         //
     }
@@ -80,10 +83,10 @@ class ProfilesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Profiles  $profiles
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profiles $profiles)
+    public function destroy(Blog $blog)
     {
         //
     }

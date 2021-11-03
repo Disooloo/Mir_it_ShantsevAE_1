@@ -15,10 +15,10 @@
                     <a class="nav-link" href="#">Топ 10</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Свежие новомти</a>
+                    <a class="nav-link" href="#">Новости</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Блог</a>
+                    <a class="nav-link" href="{{route('blog.index')}}">Блог</a>
                 </li>
                 @if(\Illuminate\Support\Facades\Auth::user() == false)
                 <li class="nav-item">
@@ -31,11 +31,12 @@
                                 {{ csrf_field() }}
                             </form>
                         </li>
+
                     <div class="dropdown">
-                        <a class="dropdown-toggle chevron block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Профиль
-                            <img src="{{asset('images/chevrondown.svg')}}"  width="35px" alt="chevron">
-                        </a>
+                            <a class="dropdown-toggle chevron block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Профиль
+                                    <img src="{{asset('images/chevrondown.svg')}}"  width="35px" alt="chevron">
+                            </a>
                         <br>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                            <ul style="width: 150px">
@@ -52,6 +53,7 @@
                     </div>
                 @endif
             </ul>
+
             <div class="navigation-menu__mobile">
                 <ul class="navigation-menu__mobile-nav">
                     <div class="navigation-menu__mobile-nav-top">
@@ -89,12 +91,16 @@
                     </div>
                 </ul>
             </div>
+            <div class="navigation-toggler">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </nav>
     </div>
 </header>
 
 <style>
-
     .chevron img:hover{
         transform: translateY(10px);
     }
@@ -110,25 +116,10 @@
     }
 
     .chevron{
-        color: white;
-        position: absolute;
-        top: 5px;
-        right: -103%;
         cursor: pointer;
-        animation: chevron_animate infinite 2s ease-in-out;
-
-    }
-
-
-
-
+        margin-top: 20px;
     }
 </style>
 
 
 
-<script>
-    $('.block').click(function(){
-        $('.some').removeClass();
-    });
-</script>

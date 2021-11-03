@@ -1,5 +1,5 @@
-@extends('layouts.profiles_layout')
-@section('title', 'Категории')
+@extends('layouts.layout')
+@section('title', 'Блог')
 
 
 @section('content')
@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="mt8 mb32"><a href="#"><img src="images/blue-left-arrow.svg" alt="arrow">Вернуться</a>
+                    <div class="mt8 mb32"><a href="{{route('main')}}"><img src="images/blue-left-arrow.svg" alt="arrow">Вернуться</a>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
 
 
                     <div class="profile-foto resume-profile-foto">
-                        @if( Auth::user()->img === true)
+                        @if (Auth::user()->img == true)
                         <img src="{{ Auth::user()->img }}" alt="profile-foto">
                             @else
                             <img  src="https://www.rcm.ac.uk/staffxml/images/missing.jpg" alt="profile-foto">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="paragraph-lead mb16">
                         <span class="mr24">Роль:</span>
-                        <span>user</span>
+                        <span>role</span>
                     </div>
                     <div class="profile-info company-profile-info resume-view__info-blick">
                         <div class="profile-info__block company-profile-info__block mb8">
@@ -52,7 +52,10 @@
                         </div>
                     </div>
                     <br>
-                    <a href="" class="btn btn-success">Редактировать</a>
+                    <a href="{{route('profiles.create')}}" class="btn btn-success">Редактировать</a>
+                     @if(Auth::user()->name == "admin")
+                        <a href="{{route('homeAdmin')}}" class="btn btn-success">Войти в админку</a>
+                    @endif
                 </div>
             </div>
         </div>

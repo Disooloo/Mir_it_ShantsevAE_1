@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\ProfilesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +28,8 @@ Route::get('/auth', function (){
 
 Auth::routes();
 //Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
-Route::resource('/profiles', \App\Http\Controllers\ProfilesController::class);
+Route::resource('/profiles', ProfilesController::class);
+Route::resource('/blog', BlogController::class);
 
 Route::middleware(['role:admin'])->prefix('administrator')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'], )->name('homeAdmin');

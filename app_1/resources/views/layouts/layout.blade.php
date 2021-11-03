@@ -15,9 +15,8 @@
 </head>
 <body>
 @include('components.navigation.header')
-
+    @yield('search')
 <div class="main-wrapper">
-  @include('components.search.search')
     @yield('content')
 </div>
 @include('components.navigation.footer')
