@@ -2,89 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\model_has_roles;
 use App\Models\Profiles;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
 class ProfilesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $role = Role::all();
-
         return view('main.profiles.index',[
-            'role' => $role
+            'user' => User::all(),
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function destroy(User $user)
     {
-        return view('main.profiles.create');
+        $user->delete();
+        return redirect()->back()->withSuccess('В разработке!');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Profiles  $profiles
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Profiles $profiles)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Profiles  $profiles
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Profiles $profiles)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Profiles  $profiles
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Profiles $profiles)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Profiles  $profiles
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Profiles $profiles)
-    {
-        //
-    }
 }

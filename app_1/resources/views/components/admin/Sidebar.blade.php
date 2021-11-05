@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="d-flex ">
-            <ul class=" nav nav-treeview">
+            <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{route('homeAdmin')}}" class="nav-link">
                         <i class="fas fa-home pr-2"></i>
@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('blog.index')}}" class="nav-link">
                         <i class="fas fa-shapes pr-2"></i>
                         <span>
                             Блог
@@ -46,9 +46,19 @@
                         </span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('user.index')}}" class="nav-link">
+                        <i class="fas fa-users pr-2"></i>
+                        <span>
+                            Пользователи
+                        </span>
+                    </a>
+                </li>
 
             </ul>
         </div>
     </div>
     <!-- /.sidebar -->
 </aside>
+
+

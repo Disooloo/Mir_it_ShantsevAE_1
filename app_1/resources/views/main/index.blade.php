@@ -1,66 +1,36 @@
 @extends('layouts.layout')
+@section('title','Главная')
 @section('search')
     @include('components.search.search')
 @endsection
 @section('content')
 
-    <div class="content">
-        <div class="container">
-            <h1 class="main-title mt24 mb16">Люди изменившие IT</h1>
-            <div class="row">
-                <div class="col-lg-9 desctop-992-pr-16">
-                    <div class="d-flex align-items-center flex-wrap mb8">
-
-                        <span class="paragraph mr16">Найдено {{$post_count}} постов</span>
-
-                        <div class="vakancy-page-header-dropdowns">
-
-                            <div class="vakancy-page-wrap show mr16">
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">За день</a>
-                                    <a class="dropdown-item" href="#">За год</a>
-                                    <a class="dropdown-item" href="#">За все время</a>
-                                </div>
+<div class="content">
+    <div class="container">
+        <h1 class="main-title mt24 mb16">Люди изменившие IT</h1>
+        <div class="row">
+            <div class="col-lg-9 desctop-992-pr-16">
+                <div class="d-flex align-items-center flex-wrap mb8">
+                    <span class="paragraph mr16">Найдено {{$post_count}} постов</span>
+                </div>
+                @foreach( $post as $el)
+                    <div class="news_el">
+                        <div class="news_el_img">
+                            <a href="{{$el->img}}" title="{{$el->title}}"><img width="150px" src="{{$el->img}}"
+                                                                   alt="{{$el->title}}"></a>
+                            <div class="news_el_data">{{$el->created_at}}</div>
+                        </div>
+                        <div class="news_el_cont">
+                            <div class="news_el_tit">
+                                <a href="{{$el->link}}" title="{{$el->title}}">{{$el->title}}</a></div>
+                            <div class="news_el_txt"> {!! $el->content !!}<br>
                             </div>
-
                         </div>
                     </div>
-                    @foreach( $post as $el)
-                        <div class="vakancy-page-block company-list-search__block resume-list__block p-rel mb16">
-                            <div class="company-list-search__block-left">
-                                <div class="resume-list__block-img mb8">
-                                    <img src="{{$el->img}}" alt="profile">
-                                </div>
-                            </div>
-                            <div class="company-list-search__block-right">
-                                <div class="mini-paragraph cadet-blue mobile-mb12">Обновлено {{$el->create_at}}</div>
-                                <h3 class="mini-title mobile-off">{{$el->title}}</h3>
-                                <div class="d-flex align-items-center flex-wrap mb8 ">
-                                    <span class="mr16 paragraph">
-                                        <?=strip_tags ($el->content)?>
-                                        <a href="{{$el->link}}">Подробнее</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-{{--                    <ul class="dor-pagination mb128">--}}
-{{--                        <li class="page-link-prev"><a href="#"><img class="mr8"--}}
-{{--                                                                    src="images/mini-left-arrow.svg" alt="arrow"> Назад</a>--}}
-{{--                        </li>--}}
-{{--                        <li><a href="#">1</a></li>--}}
-{{--                        <li><a class="grey" href="#">...</a></li>--}}
-{{--                        <li class="active"><a href="#">4</a></li>--}}
-{{--                        <li><a href="#">5</a></li>--}}
-{{--                        <li><a class="grey" href="#">...</a></li>--}}
-{{--                        <li><a href="#">10</a></li>--}}
-{{--                        <li class="page-link-next"><a href="#">Далее <img class="ml8"--}}
-{{--                                                                          src="images/mini-right-arrow.svg" alt="arrow"></a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-                </div>
-{{--              @include('components.search.filter')--}}
+                @endforeach
             </div>
+            {{ $post->links() }}
         </div>
     </div>
+</div>
 @endsection

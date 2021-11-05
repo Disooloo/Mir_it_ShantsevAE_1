@@ -1,5 +1,5 @@
 @extends('layouts.admin_layout')
-@section('title', 'редактирование поста')
+@section('title', 'Добавление статьи блога')
 
 
 @section('content')
@@ -10,12 +10,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Редактирование статьи: {{$post['title']}}</h1>
+                        <h1 class="m-0">Добавление статьи</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('category.index')}}">Назад</a></li>
-                            <li class="breadcrumb-item active">Редактирование статьи</li>
+                            <li class="breadcrumb-item"><a href="{{route('blog.index')}}">Назад</a></li>
+                            <li class="breadcrumb-item active">Создание статьи</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -36,39 +36,35 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card card-primary">
-                            <form action="{{route('post.update', $post['id'])}}" method="POST">
+                            <form action="{{route('blog.store')}}" method="POST">
                                 @csrf
-                                @method('PUT')
                                 <div class="form-group">
-                                    <input type="title" required class="form-control" value="{{$post['title']}}" name="title" placeholder="Название статьи"/>
+                                    <input type="title" required class="form-control" name="title" placeholder="Название статьи"/>
                                     @error('title')
                                     <div class="text-danger">Это поле необходимо заполнить</div>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-6">
-                                        <label >Выберите категорию</label>
-                                        <select name="cat_id" class="form-control" required>
-                                            @foreach ($categories as $category)
-                                                <option value="{{ $category['id'] }}" @if ($category['id'] == $post['cat_id']) selected
-                                                    @endif>{{ $category['title'] }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <label>Ссылка из источноков</label>
+                                        <input type="text" class="input-group" name="link">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="content" class="editor"> {{ $post['content'] }} </textarea>
+                                    <textarea name="text1" placeholder="Краткое описание"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="text2" class="editor" placeholder="Полное описание"></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="feature_image">Изображение статьи</label>
-                                    <img src="{{ $post['img']}}" alt="" class="img-uploaded" style="display: block; width: 300px">
-                                    <input type="text" name="img"  class="form-control" id="feature_image"
-                                           name="feature_image" value="{{ $post['img']}}" readonly>
+                                    <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
+                                    <input type="text" name="img" class="form-control" id="feature_image"
+                                           name="feature_image" value="" readonly>
                                     <a href="" class="popup_selector" data-inputid="feature_image">Выбрать изображение</a>
                                 </div>
-                                <input type="submit" class="btn btn-block btn-success w-25" value="Сохранить ">
+                                <input type="submit" class="btn btn-block btn-success w-25" value="Добавить">
                             </form>
                         </div>
                     </div>

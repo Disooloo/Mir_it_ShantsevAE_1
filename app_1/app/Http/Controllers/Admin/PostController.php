@@ -98,7 +98,6 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->cat_id = $request->cat_id;
         $post->link = $request->link;
-        $post->create_at = '2020-10-01';
         $post->save();
 
         return redirect()->back()->withSuccess('Статья успешно добавлена!');
@@ -113,7 +112,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $post->delete();
         return redirect()->back()->withSuccess('Статья была успешно удалена!');
     }
 }

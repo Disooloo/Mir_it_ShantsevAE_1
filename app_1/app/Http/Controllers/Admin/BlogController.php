@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -13,12 +14,13 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
-        $blog_count = Blog::all()->count();
-        return view('main.blog.index',[
-            'post' => Blog::all(),
-            'blog_count' => $blog_count,
+        $blog = Blog::orderBy('created_at', 'DESC')->get();
+        return view('admin.blog.index',[
+            'blog' => $blog,
         ]);
     }
 
@@ -29,7 +31,11 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::orderBy('created_at', 'DESC')->get();
+
+        return view('admin.blog.create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -40,7 +46,15 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->img = $request->img;
+        $blog->text1 = $request->text1;
+        $blog->text2 = $request->text2;
+        $blog->link = $request->link;
+        $blog->save();
+
+        return redirect()->back()->withSuccess('Статья успешно добавлена!');
     }
 
     /**
@@ -51,10 +65,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        event('postHasViewed', $blog);
-        return view('main.blog.show',[
-            'blog' => $blog,
-        ]);
+        //
     }
 
     /**
@@ -65,7 +76,9 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('admin.blog.edit', [
+            'blog' => $blog,
+        ]);
     }
 
     /**
@@ -77,7 +90,14 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $blog->title = $request->title;
+        $blog->img = $request->img;
+        $blog->text1 = $request->text1;
+        $blog->text2 = $request->text2;
+        $blog->link = $request->link;
+        $blog->save();
+
+        return redirect()->back()->withSuccess('Статья успешно добавлена!');
     }
 
     /**
@@ -88,6 +108,7 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        $blog->delete();
+        return redirect()->back()->withSuccess('Статья была успешно удалена!');
     }
 }

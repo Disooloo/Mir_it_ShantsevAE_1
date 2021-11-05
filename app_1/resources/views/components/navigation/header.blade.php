@@ -8,17 +8,14 @@
             <div class="header__login header__login-mobile">
             </div>
             <ul class="navigation-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Главная</a>
+                <li class="nav-item ">
+                    <a href="{{ route('main') }}" class="nav-item {{ request()->routeIs('main') ? 'active' : '' }}">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a  href="{{ route('main.top.index') }}" class="nav-item {{ request()->routeIs('main.top.index') ? 'active' : '' }}">По категориям</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Топ 10</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Новости</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('blog.index')}}">Блог</a>
+                    <a href="{{ route('main.index.blog') }}" class="nav-item {{ request()->routeIs('main.index.blog') ? 'active' : '' }}">Блог</a>
                 </li>
                 @if(\Illuminate\Support\Facades\Auth::user() == false)
                 <li class="nav-item">
@@ -26,12 +23,10 @@
                 </li>
                     @else
                         <li class="nav-item">
-
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
                         </li>
-
                     <div class="dropdown">
                             <a class="dropdown-toggle chevron block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Профиль
@@ -42,7 +37,7 @@
                            <ul style="width: 150px">
                                <li><a href="#" class="av-link">Здравствуйте, {{ Auth::user()->name }}</a></li>
                                <li><hr class="dropdown-divider"></li>
-                               <li> <a class="nav-link" href="{{route('profiles.index')}}">Профиль</a></li>
+                               <li> <a class="nav-link" href="{{route('main.profile.index')}}">Профиль</a></li>
                                <li>  <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">Выйти
@@ -57,16 +52,16 @@
             <div class="navigation-menu__mobile">
                 <ul class="navigation-menu__mobile-nav">
                     <div class="navigation-menu__mobile-nav-top">
-                        <li class="navigation-menu__mobile-nav-item active">
+                        <li class="navigation-menu__mobile-nav-item ">
                             <a class="nav-link" href="#">Главная</a>
                         </li>
-                        <li class="navigation-menu__mobile-nav-item active">
+                        <li class="navigation-menu__mobile-nav-item ">
                             <a class="nav-link" href="#">Топ 10</a>
                         </li>
-                        <li class="navigation-menu__mobile-nav-item active">
+                        <li class="navigation-menu__mobile-nav-item ">
                             <a class="nav-link" href="#">Новости</a>
                         </li>
-                        <li class="navigation-menu__mobile-nav-item active">
+                        <li class="navigation-menu__mobile-nav-item ">
                             <a class="nav-link" href="#">Блог</a>
                         </li>
                         <li><hr></li>
@@ -75,7 +70,7 @@
                                 <a class="nav-link" href="#"> {{ Auth::user()->name }}</a>
                             </li>
                             <li class="navigation-menu__mobile-nav-item">
-                                <a class="nav-link" href="{{route('profiles.index')}}">Профиль</a>
+                                <a class="nav-link" href="{{route('main.profile.index')}}">Профиль</a>
                             </li>
                             <li class="navigation-menu__mobile-nav-item">
                                 <a href="{{ url('/logout') }}"
@@ -99,27 +94,4 @@
         </nav>
     </div>
 </header>
-
-<style>
-    .chevron img:hover{
-        transform: translateY(10px);
-    }
-
-    .chevron img{
-        transition: all 0.5s ease-in-out;
-    }
-
-
-
-    .chevron:hover{
-        animation-play-state: paused;
-    }
-
-    .chevron{
-        cursor: pointer;
-        margin-top: 20px;
-    }
-</style>
-
-
 
