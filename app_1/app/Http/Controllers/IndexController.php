@@ -31,7 +31,13 @@ class IndexController extends Controller
             'blog' => $blog,
         ]);
     }
-
+    public function blog_search(Request $request)
+    {
+        $s = $request->s;
+        $blog = Blog::where('title', 'LIKE', "%{$s}%")->orderBy('title')->paginate(10);
+        $blog_count = $blog->count();
+        return view('main.blog.index', compact('blog', 'blog_count'));
+    }
 
     public function search(Request $request)
     {

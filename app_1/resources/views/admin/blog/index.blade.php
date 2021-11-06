@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Статьи</h1>
+                        <h1 class="m-0">Статьи блога</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('homeAdmin')}}">Назад</a></li>
-                            <li class="breadcrumb-item active">Статьи</li>
+                            <li class="breadcrumb-item active">Статьи блога</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -105,6 +105,7 @@
                             </div>
                             <!-- /.card-body -->
                         </div>
+                        {{$blog->links()}}
                     </div><!-- /.container-fluid -->
                 </section>
 

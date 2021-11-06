@@ -15,7 +15,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('blog.index')}}">Назад</a></li>
-                            <li class="breadcrumb-item active">Создание статьи</li>
+                            <li class="breadcrumb-item active">Добавление статьи</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

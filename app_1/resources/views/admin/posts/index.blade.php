@@ -47,7 +47,7 @@
                                             ID
                                         </th>
                                         <th>
-                                            Имя
+                                            Название
                                         </th>
                                         <th>
                                             Категория
@@ -105,6 +105,7 @@
                             </div>
                             <!-- /.card-body -->
                         </div>
+                        {{$posts->links()}}
                     </div><!-- /.container-fluid -->
                 </section>
 

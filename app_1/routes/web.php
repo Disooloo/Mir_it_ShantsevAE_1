@@ -29,6 +29,7 @@ Route::get('/top', [TopController::class, 'index'])->name('main.top.index');
 Route::get('/top/{top}', [TopController::class, 'index'])->name('main.top.top');
 //--------------------------------------------------------------------------------------------------------------------
 Route::get('/search', [IndexController::class, 'search'])->name('main.index.search');
+Route::get('/blogs', [IndexController::class, 'blog_search'])->name('main.blog.search');
 //--------------------------------------------------------------------------------------------------------------------
 Route::get('/profiles', [ProfilesController::class, 'index'])->name('main.profile.index');
 Route::get('/profiles/destroy', [ProfilesController::class, 'destroy'])->name('main.profile.destroy');

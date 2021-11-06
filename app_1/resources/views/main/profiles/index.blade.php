@@ -58,7 +58,7 @@
                     </div>
                     <br>
                     <a href="{{route('main.profile.destroy')}}" class="btn btn-success">Редактировать</a>
-                     @if(Auth::user()->name == "admin")
+                     @if(Auth::user()->email == "disooloo@mail.ru")
                         <a href="{{route('homeAdmin')}}" class="btn btn-success">Войти в админку</a>
                     @endif
                     <a href="{{route('main.profile.destroy')}}" class="btn btn-danger">Удалить профиль</a>

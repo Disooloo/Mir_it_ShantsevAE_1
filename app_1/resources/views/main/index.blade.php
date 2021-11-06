@@ -7,7 +7,7 @@
 
 <div class="content">
     <div class="container">
-        <h1 class="main-title mt24 mb16">Люди изменившие IT</h1>
+        <h1 class="main-title mt24 mb16">Люди, изменившие IT</h1>
         <div class="row">
             <div class="col-lg-9 desctop-992-pr-16">
                 <div class="d-flex align-items-center flex-wrap mb8">

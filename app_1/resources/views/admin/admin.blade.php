@@ -25,7 +25,6 @@
                         <div class="small-box bg-info">
                             <div class="inner">
                                 <h3>{{ $posts_count }}</h3>
-
                                 <p>Записей</p>
                             </div>
                             <div class="icon">
@@ -40,13 +39,12 @@
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <h3>{{$blog_count}}<sup style="font-size: 20px"></sup></h3>
-
                                 <p>Статей блога</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Все статьи блога <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('blog.index')}}" class="small-box-footer">Все статьи блога <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -55,13 +53,12 @@
                         <div class="small-box bg-warning">
                             <div class="inner">
                                 <h3>{{$posts_user}}</h3>
-
                                 <p>Пользователей</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
                             </div>
-                            <a href="{{route('login')}}" class="small-box-footer">Добавить пользователя <i class="fas fa-arrow-circle-right"></i> </a>
+                            <a href="{{route('user.index')}}" class="small-box-footer">Все пользователи <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

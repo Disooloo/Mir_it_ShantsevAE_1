@@ -26,8 +26,8 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
             </div>
-         @endif
-        <!-- Main content -->
+    @endif
+    <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
@@ -64,12 +64,14 @@
                                             </td>
 
                                             <td class="project-actions text-right">
-                                                <a class="btn btn-info btn-sm" href="{{route('category.edit', $category['id']) }}">
+                                                <a class="btn btn-info btn-sm"
+                                                   href="{{route('category.edit', $category['id']) }}">
                                                     <i class="fas fa-pencil-alt">
                                                     </i>
                                                     Редактировать
                                                 </a>
-                                                <form action="{{route('category.destroy', $category['id'])}}" method="POST"
+                                                <form action="{{route('category.destroy', $category['id'])}}"
+                                                      method="POST"
                                                       style="display: inline-block">
                                                     @csrf
                                                     @method('DELETE')
@@ -82,16 +84,14 @@
                                             </td>
                                         </tr>
                                     @endforeach
-
-
                                     </tbody>
                                 </table>
                             </div>
                             <!-- /.card-body -->
                         </div>
+                        {{$categories->links()}}
                     </div><!-- /.container-fluid -->
                 </section>
-
         </section>
         <!-- /.content -->
     </div>

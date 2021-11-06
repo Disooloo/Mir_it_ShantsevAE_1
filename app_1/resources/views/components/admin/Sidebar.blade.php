@@ -6,7 +6,11 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ Auth::user()->img }}" style="border-radius: 15px" alt="User Image">
+                @if (Auth::user()->img == true)
+                    <img src="{{ Auth::user()->img }}" style="border-radius: 15px" alt="profile-foto">
+                @else
+                    <img style="border-radius: 15px" src="https://www.rcm.ac.uk/staffxml/images/missing.jpg" alt="profile-foto">
+                @endif
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ Auth::user()->name }}</a>
@@ -47,10 +51,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('user.index')}}" class="nav-link">
-                        <i class="fas fa-users pr-2"></i>
+                    <a href="{{route('main')}}" class="nav-link">
+                        <i class="fas fa-undo-alt pr-2"></i>
                         <span>
-                            Пользователи
+                            вернуться на сайт
                         </span>
                     </a>
                 </li>

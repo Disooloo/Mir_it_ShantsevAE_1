@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('title','Блог')
 @section('search')
-    @include('components.search.search')
+    @include('components.search_blog.search')
 @endsection
 @section('content')
 
