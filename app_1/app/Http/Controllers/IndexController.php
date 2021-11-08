@@ -12,14 +12,14 @@ class IndexController extends Controller
     public function index()
     {
         $post_count = Post::all()->count();
-        $post = Post::paginate(10);
+        $post = Post::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('main.index', compact('post_count', 'post'));
     }
     public function blog()
     {
         $blog_count = Blog::all()->count();
-        $blog = Blog::paginate(10);
+        $blog = Blog::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('main.blog.index', compact('blog_count', 'blog'));
     }
