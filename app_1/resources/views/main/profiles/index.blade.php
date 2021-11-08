@@ -24,7 +24,7 @@
                         @if (Auth::user()->img == true)
                         <img src="{{ Auth::user()->img }}" alt="profile-foto">
                             @else
-                            <img  src="https://www.rcm.ac.uk/staffxml/images/missing.jpg" alt="profile-foto">
+                            <img  src="https://yt3.ggpht.com/a/AATXAJyJrARQbu2zRqfSEg1BIuh1pjerEEiLbhkgsOV_bA=s900-c-k-c0xffffffff-no-rj-mo" alt="profile-foto">
                         @endif
                     </div>
                 </div>
