@@ -11,7 +11,7 @@
 <li>strat brawser http://127.0.0.1:8000/</li>
 </ol>
 
-Видео инструкция <a href="https://disk.yandex.ru/i/UBKEkiHLkzEr2w">Смотреть</a>
+Видео инструкция <a href="https://disk.yandex.ru/i/UBKEkiHLkzEr2w">Смотреть</a> <br/>
 Обзор проекта <a href="https://disk.yandex.ru/i/fMFQ8tzNAtTc9Q">Смотреть</a>
 
 Фото обзор
