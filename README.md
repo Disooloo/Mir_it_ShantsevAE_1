@@ -41,6 +41,11 @@ php artisan migrate
 -
 Если открыли мою db_host.sql как в видео. Миграцию делать не надо.
 ```
+## Запуск 
+```
+php artisan serve
+http://127.0.0.1:8000/
+ ```
 
 ## Login
 disooloo@mail.ru  
