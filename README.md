@@ -11,17 +11,19 @@
 ![#3490dc](https://via.placeholder.com/15/3490dc/000000?text=+) `#3490dc`
 
 
-## Install
+## Установка
 
-cd app
+`git clone https://github.com/Disooloo/Mir_it_ShantsevAE_1.git`
+
+`cd app_1`
 
 `composer install`
 
-`npm install` или `yarn` (see folder **node_modules**)
+`npm install` или `yarn` (Смотри папку **node_modules**)
 
 Изменить `.env.example` на `.env`
 
-Generate APP_KEY
+Генерация APP_KEY
 `php artisan key:generate`
 
 
@@ -30,16 +32,16 @@ Generate APP_KEY
 DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=Your db name
-DB_USERNAME=Your username
-DB_PASSWORD=Your password
+DB_DATABASE=Имя бд
+DB_USERNAME=Имя пользователя 
+DB_PASSWORD=Пароль пользователя
 ```
 
 ## Выполнение Миграций
 ```
 php artisan migrate
 -
-Если открыли мою db_host.sql как в видео. Миграцию делать не надо.
+Если открыли мою j1150654_it-people.sql как в видео. Миграцию делать не надо.
 ```
 ## Запуск 
 ```
@@ -47,7 +49,7 @@ php artisan serve
 http://127.0.0.1:8000/
  ```
 
-## Login
+## Пароль от админки
 disooloo@mail.ru  
 admin123
 <hr>

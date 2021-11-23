@@ -3,8 +3,10 @@
 @section('search')
     @include('components.search.search')
 @endsection
-@section('content')
 
+
+
+@section('content')
 <div class="content">
     <div class="container">
         <h1 class="main-title mt24 mb16">Люди, изменившие IT</h1>
@@ -16,7 +18,8 @@
                 @foreach( $post as $el)
                     <div class="news_el">
                         <div class="news_el_img">
-                            <a href="{{$el->img}}" title="{{$el->title}}"><img width="150px" src="{{$el->img}}"
+                            <a href="{{$el->img}}" title="{{$el->title}}">
+                                <img width="150px" src="{{$el->img}}"
                                                                    alt="{{$el->title}}"></a>
                             <div class="news_el_data">{{$el->created_at}}</div>
                         </div>
@@ -31,6 +34,7 @@
             </div>
             {{ $post->links() }}
         </div>
+    </div>
     </div>
 </div>
 @endsection

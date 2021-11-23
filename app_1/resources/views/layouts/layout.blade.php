@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
 </head>
 <body>
+
 @include('components.navigation.header')
     @yield('search')
 <div class="main-wrapper">
