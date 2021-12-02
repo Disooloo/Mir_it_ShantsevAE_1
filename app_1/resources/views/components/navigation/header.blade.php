@@ -53,16 +53,16 @@
                 <ul class="navigation-menu__mobile-nav">
                     <div class="navigation-menu__mobile-nav-top">
                         <li class="navigation-menu__mobile-nav-item ">
-                            <a class="nav-link" href="#">Главная</a>
+                            <!-- <a class="nav-link" href="#">Главная</a> -->
+                            <a href="{{ route('main') }}" class="nav-link {{ request()->routeIs('main') ? 'active' : '' }}">Главная</a>
                         </li>
                         <li class="navigation-menu__mobile-nav-item ">
-                            <a class="nav-link" href="#">Топ 10</a>
+                            <!-- <a class="nav-link" href="#">Топ 10</a> -->
+                            <a  href="{{ route('main.top.index') }}" class="nav-item {{ request()->routeIs('main.top.index') ? 'active' : '' }}">По категориям</a>
                         </li>
                         <li class="navigation-menu__mobile-nav-item ">
-                            <a class="nav-link" href="#">Новости</a>
-                        </li>
-                        <li class="navigation-menu__mobile-nav-item ">
-                            <a class="nav-link" href="#">Блог</a>
+                            <!-- <a class="nav-link" href="#">Новости</a> -->
+                            <a href="{{ route('main.index.blog') }}" class="nav-item {{ request()->routeIs('main.index.blog') ? 'active' : '' }}">Блог</a>
                         </li>
                         <li><hr></li>
                         @if(\Illuminate\Support\Facades\Auth::user() == true)
